@@ -11,8 +11,9 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'npm install'
-            }
+               
+           echo 'No build step required for plain JavaScript'     
+       }
         }
 
         stage('Test') {
