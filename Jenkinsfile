@@ -2,21 +2,28 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/Namami-Bits/Git-lab-DevOps.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                sh 'node --version'
+                sh 'npm install'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'node calculate.js'
+                sh 'node test.js'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploy done"
+                echo 'Deployment step (dummy for now)'
             }
         }
     }
