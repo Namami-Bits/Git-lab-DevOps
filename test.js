@@ -1,4 +1,4 @@
-const calculator = require('./calculator');
+const calculator = require('./calculate');
 
 if (calculator.add(2,3) !== 5) {
     throw new Error("Test failed: add function is wrong");
